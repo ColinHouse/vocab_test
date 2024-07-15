@@ -1,10 +1,10 @@
 # 短语背诵小程序
 
 ## 介绍
-这是一个用于英/日语短语背诵和测试的桌面应用程序。你可以添加新的词汇，进行随机测试，并查看词汇的统计信息。
+这是一个用于英语短语背诵和测试的桌面应用程序。你可以添加新的词汇，进行随机测试，并查看词汇的统计信息。
 
 ## 功能
-- 添加新的中，英/日文词组
+- 添加新的中英文词组
 - 随机测试你的英语词汇
 - 查看词汇的测试统计信息
 - 支持选择不同的词汇库
@@ -61,10 +61,10 @@ python main.py
 
 ## Introduction
 
-This is a desktop application for memorizing and testing English/Japanese phrases. You can add new vocabulary, perform random tests, and view vocabulary statistics
+This is a desktop application for memorizing and testing English phrases. You can add new vocabulary, perform random tests, and view vocabulary statistics
 
 ## Features
-- Add new Chinese, Japanese and English phrases
+- Add new Chinese and English phrases
 - Randomly test your English vocabulary
 - View statistics of vocabulary tests
 - Support selecting different vocabulary librarie

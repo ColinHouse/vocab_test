@@ -1,5 +1,6 @@
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QTableWidget, QTableWidgetItem, QPushButton, QScrollArea, QCheckBox, \
-    QHeaderView, QHBoxLayout, QMessageBox
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QTableWidget, QHeaderView, QScrollArea, QHBoxLayout, QPushButton, \
+    QMessageBox, QCheckBox, QTableWidgetItem
 
 
 class StatsUI(QWidget):
@@ -54,7 +55,11 @@ class StatsUI(QWidget):
             self.stats_table.setItem(row, 1, QTableWidgetItem(word))
             self.stats_table.setItem(row, 2, QTableWidgetItem(str(attempts)))
             self.stats_table.setItem(row, 3, QTableWidgetItem(str(errors)))
-            self.stats_table.setItem(row, 4, QTableWidgetItem(f"{error_rate:.2f}%"))
+            error_rate_item = QTableWidgetItem(f"{error_rate:.2f}%")
+            error_rate_item.setData(Qt.EditRole, error_rate)  # 设置数据为错误率的数值形式
+            self.stats_table.setItem(row, 4, error_rate_item)
+
+        self.stats_table.sortItems(4, Qt.DescendingOrder)  # 按照错误率降序排序
 
     def delete_selected_words(self):
         """Mark selected words for deletion."""
