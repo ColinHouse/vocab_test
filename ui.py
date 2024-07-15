@@ -1,4 +1,3 @@
-# ui.py
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QStackedWidget, QPushButton, QHBoxLayout, QLabel, QComboBox, \
     QInputDialog, QMessageBox
 from vocab import read_vocab, write_vocab, get_vocab_list, create_new_vocab
@@ -154,3 +153,9 @@ class VocabApp(QWidget):
 
     def update_stats(self):
         write_stats(self.current_vocab, self.stats)
+
+    def write_vocab(self, vocab):  # 添加此方法
+        write_vocab(self.current_vocab, vocab)
+
+    def write_stats(self, stats):  # 添加此方法
+        write_stats(self.current_vocab, stats)
