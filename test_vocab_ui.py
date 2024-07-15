@@ -4,6 +4,8 @@ import time
 from PySide6.QtCore import QCoreApplication
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QHBoxLayout
 
+import utils
+
 
 class TestVocabUI(QWidget):
     def __init__(self, parent):
@@ -57,8 +59,7 @@ class TestVocabUI(QWidget):
             self.result_label.setText("正确！")
             self.result_label.setStyleSheet("color: green;")
         else:
-            self.result_label.setText(f"错误，正确答案是: {correct_answer}")
-            self.result_label.setStyleSheet("color: red;")
+            utils.highlight_differences(self, user_answer, correct_answer)
 
         self.parent.stats[chinese]['attempts'] += 1
         if user_answer != correct_answer:
