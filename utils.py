@@ -1,5 +1,6 @@
 # utils.py
 import random
+import re
 
 
 def choose_weighted_random_word(vocab, stats):
@@ -11,9 +12,6 @@ def choose_weighted_random_word(vocab, stats):
 
 
 def highlight_differences(self, user_answer, correct_answer):
-    import re
-
-    # 使用正则表达式分割单词
     user_words = re.findall(r'[\u4e00-\u9fff]+|[ぁ-んァ-ヶー]+|[\w]+|[^\w\s]', user_answer)
     correct_words = re.findall(r'[\u4e00-\u9fff]+|[ぁ-んァ-ヶー]+|[\w]+|[^\w\s]', correct_answer)
 
@@ -27,7 +25,7 @@ def highlight_differences(self, user_answer, correct_answer):
                 highlighted_text.append(f'<span style="color: red; font-weight: bold;">{correct_word}</span>')
             elif re.match(r'[ぁ-んァ-ヶー]+', correct_word):  # 平假名和片假名
                 highlighted_text.append(f'<span style="color: red; font-weight: bold;">{correct_word}</span>')
-            elif re.match(r'[\w]+', correct_word):  # 英文单词
+            elif re.match(r'[a-zA-ZàâäèéêëîïôùûüÿçÀÂÄÈÉÊËÎÏÔÙÛÜŸÇ]+', correct_word):  # 英文单词
                 highlighted_text.append(f'<span style="color: red;">{correct_word}</span>')
             else:
                 highlighted_text.append(f'<span style="color: red;">{correct_word}</span>')
@@ -41,6 +39,5 @@ def highlight_differences(self, user_answer, correct_answer):
         for extra_word in correct_words[len(user_words):]:
             highlighted_text.append(f'<span style="color: red; font-weight: bold;">{extra_word}</span>')
 
-    self.result_label.setText(f"错误，正确答案是: {''.join(highlighted_text)}")
+    self.result_label.setText(f"错误，正确答案是: {' '.join(highlighted_text)}")
     self.result_label.setStyleSheet("font-size: 24px;")
-
