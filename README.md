@@ -79,10 +79,10 @@ cd vocab_test
 ```
 
 ### 2. Install dependencies
-运行以下命令以安装所需的Python包：
+Run the following command to install the required Python packages:
 
 ```bash
-Run the following command to install the required Python packages:
+pip install -r requirements.txt
 ```
 
 ### 3. Run the installation script
