@@ -1,3 +1,6 @@
+> **已合并到 [kotoba-studio](https://github.com/ColinHouse/kotoba-studio)。** 本仓库已归档，仅作历史参考。
+> **Merged into [kotoba-studio](https://github.com/ColinHouse/kotoba-studio); this repository is archived for reference only.**
+
 # 短语背诵小程序
 
 ## 介绍
